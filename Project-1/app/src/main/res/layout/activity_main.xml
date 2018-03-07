@@ -6,27 +6,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
+    android:background="@drawable/app_background"
     tools:context="com.example.turnercruz.project_1.MainActivity">
 
 
 
     <RelativeLayout
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         android:layout_width="match_parent"
-        android:layout_height="0dp"></RelativeLayout>
+        android:layout_height="0dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/textView"
+            tools:text="Photo Gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#FFFF"
+            android:textSize="20dp"/>
+
+    </RelativeLayout>
 
 
     <GridLayout
         android:columnCount="2"
-        android:rowCount="2"
+        android:rowCount="3"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
-        android:layout_weight="7"
+        android:layout_weight="8"
         android:layout_width="match_parent"
         android:padding="14dp"
         android:layout_height="0dp">
 
 
+
+
         <android.support.v7.widget.CardView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -35,21 +56,22 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="0dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <ImageView
-                    android:src="@drawable/bg4"
+                    android:id="@+id/image1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:scaleType="fitXY"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -61,21 +83,22 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="0dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <ImageView
-                    android:src="@drawable/bg2"
+                    android:id="@+id/image2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:scaleType="fitXY"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -87,21 +110,22 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="0dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <ImageView
-                    android:src="@drawable/bg3"
+                    android:id="@+id/image3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:scaleType="fitXY"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -113,28 +137,32 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="5dp"
+                android:layout_margin="0dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <ImageView
-                    android:src="@drawable/bg4"
+                    android:id="@+id/image4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:scaleType="fitXY"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
+
+
 
 
 
     </GridLayout>
+
 
 
 
