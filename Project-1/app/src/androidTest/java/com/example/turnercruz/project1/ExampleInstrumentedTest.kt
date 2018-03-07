@@ -1,4 +1,4 @@
-package com.example.turnercruz.project_1
+package com.example.turnercruz.project1
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
