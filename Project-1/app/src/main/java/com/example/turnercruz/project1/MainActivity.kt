@@ -11,6 +11,12 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_main.*
+import android.R.attr.data
+import android.graphics.BitmapFactory
+import android.media.Image
+import android.provider.MediaStore
+import kotlinx.android.synthetic.main.activity_photo_manager.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,10 +26,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val cameraButton1: ImageView = findViewById(R.id.image1)
-        val cameraButton2: ImageView = findViewById(R.id.image2)
-        val cameraButton3: ImageView = findViewById(R.id.image3)
-        val cameraButton4: ImageView = findViewById(R.id.image4)
+        val image1:ImageView = findViewById(R.id.image1)
+        val image2: ImageView = findViewById(R.id.image2)
+        val image3: ImageView = findViewById(R.id.image3)
+        val image4: ImageView = findViewById(R.id.image4)
         val cameraCheckPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
 
         if (cameraCheckPermission != PackageManager.PERMISSION_GRANTED) {
@@ -44,20 +50,23 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-        cameraButton1.setOnClickListener {
+
+
+        image1.setOnClickListener {
+
+            launchPhotoManager()
+
+        }
+
+        image2.setOnClickListener {
 
             launchPhotoManager()
         }
-
-        cameraButton2.setOnClickListener {
-
-            launchPhotoManager()
-        }
-        cameraButton3.setOnClickListener {
+        image3.setOnClickListener {
 
             launchPhotoManager()
         }
-        cameraButton4.setOnClickListener {
+        image4.setOnClickListener {
 
             launchPhotoManager()
         }
@@ -86,11 +95,11 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun launchPhotoManager() {
-        val intent = Intent(this, PhotoManager::class.java)
+        val photoManagerIntent = Intent(this, PhotoManager::class.java)
         startActivityForResult(
-                intent,
-                9090
-        )
+                photoManagerIntent, 9090)
+
+        onPause()
 
     }
 
@@ -101,48 +110,32 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == 9090) {
 
             if (data != null) {
+                onResume()
 
+//               intent.getBundleExtra("data")
+//                val bitmap = intent.getParcelableExtra<Bitmap>("data")
+                val imageView1:ImageView =findViewById(R.id.image)
+
+
+
+
+
+
+                val bitmap1 = intent.getParcelableExtra("data") as Bitmap
+                imageView1.setImageBitmap(bitmap1)
 //                val imageData: Bitmap = data.extras.get("data") as Bitmap
 //
 //                val imageView: ImageButton = findViewById(R.id.image1)
 //                imageView.setImageBitmap(imageData)
-                val bitmap = intent.getParcelableExtra("data") as Bitmap
-                image1.setImageBitmap(bitmap)
+//                val bitmap = intent.getParcelableExtra("data") as Bitmap
+//                image1.setImageBitmap(bitmap)
+
+
             }
         }
     }
 }
-//
-//        if( requestCode == 9091){
-//
-//            if( data != null ) {
-//                val imageData: Bitmap = data.extras.get("data") as Bitmap
-//
-//                val imageView2 = findViewById<ImageView>(R.id.image)
-//                imageView2.setImageBitmap(imageData)
-//
-//            }
-//        }
-//        if( requestCode == 9092){
-//
-//            if( data != null ) {
-//                val imageData: Bitmap = data.extras.get("data") as Bitmap
-//
-//                val imageView3 = findViewById<ImageView>(R.id.image)
-//                imageView3.setImageBitmap(imageData)
-//
-//            }
-//        }
-//        if( requestCode == 9093){
-//
-//            if( data != null ) {
-//                val imageData: Bitmap = data.extras.get("data") as Bitmap
-//
-//                val imageView4 = findViewById<ImageView>(R.id.image)
-//                imageView4.setImageBitmap(imageData)
-//
-//            }
-//  }
+
        
 
 
