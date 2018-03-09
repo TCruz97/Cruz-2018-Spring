@@ -20,7 +20,12 @@ import kotlinx.android.synthetic.main.activity_photo_manager.*
 
 
 class PhotoManager : AppCompatActivity() {
+    private var imageData:Bitmap?=null
+   // private  var imageDetails:ImageDetail?=null
 
+    companion object {
+        const val EXTRA_IMAGE_INDEX_KEY:String="EXTRA_IMAGE-INDEX_KEY"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo_manager)
@@ -28,6 +33,11 @@ class PhotoManager : AppCompatActivity() {
 
         val image:ImageView = findViewById(R.id.image)
         val edit: Button = findViewById(R.id.editButton)
+
+        val imageIndex:Int = intent.getIntExtra(EXTRA_IMAGE_INDEX_KEY, -1)
+
+
+
 
 
         edit.setOnClickListener {
@@ -59,6 +69,9 @@ class PhotoManager : AppCompatActivity() {
 
 
         }
+
+    }
+    private fun createImageDetail(){
 
     }
     private fun requestPermission(){

@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.R.attr.data
 import android.graphics.BitmapFactory
 import android.media.Image
+import android.provider.ContactsContract
 import android.provider.MediaStore
 import kotlinx.android.synthetic.main.activity_photo_manager.*
 
@@ -86,6 +87,7 @@ class MainActivity : AppCompatActivity() {
             if (permission == Manifest.permission.CAMERA) {
                 if (grantResults[index] == PackageManager.PERMISSION_GRANTED) {
                     launchPhotoManager()
+
                 }
             }
         }
@@ -95,11 +97,10 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun launchPhotoManager() {
-        val photoManagerIntent = Intent(this, PhotoManager::class.java)
-        startActivityForResult(
-                photoManagerIntent, 9090)
-
-        onPause()
+        val photoManagerIntent:Intent = Intent(this, PhotoManager::class.java)
+        startActivityForResult(photoManagerIntent, 9090)
+//        val imageIndex: Int = imageTapped.id.toString().toInt()
+//        photoManagerIntent.putExtra("data", imageIndex)
 
     }
 
@@ -117,11 +118,8 @@ class MainActivity : AppCompatActivity() {
                 val imageView1:ImageView =findViewById(R.id.image)
 
 
-
-
-
-
                 val bitmap1 = intent.getParcelableExtra("data") as Bitmap
+
                 imageView1.setImageBitmap(bitmap1)
 //                val imageData: Bitmap = data.extras.get("data") as Bitmap
 //
