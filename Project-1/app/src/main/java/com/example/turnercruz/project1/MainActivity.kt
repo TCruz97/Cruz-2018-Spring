@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                 imageView1.setImageBitmap(bitmap1)
 //                val imageData: Bitmap = data.extras.get("data") as Bitmap
 //
-//                val imageView: ImageButton = findViewById(R.id.image1)
+//               val imageView: ImageButton = findViewById(R.id.image1)
 //                imageView.setImageBitmap(imageData)
 //                val bitmap = intent.getParcelableExtra("data") as Bitmap
 //                image1.setImageBitmap(bitmap)
